@@ -13,14 +13,14 @@ function myFunction(){
   var txt = "";var filesList;
   if ('files' in x) {
     if (x.files.length == 0) {
-     // txt = "";
+      txt = "";
     } else {
       for (var i = 0; i < x.files.length; i++) {
-        txt += "<br><strong>" + (i+1) + ". ";
+        txt += "<br>" + (i+1) + ". ";
         var file = x.files[i];
+         filesList.push(file.name)
         if ('name' in file) {
-          txt += file.name + "<br>";
-           filesList  += file.name
+          txt += file.name + "<br>";   
         }
       }
     }
