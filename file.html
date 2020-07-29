@@ -16,11 +16,11 @@ function myFunction(){
       txt = "";
     } else {
       for (var i = 0; i < x.files.length; i++) {
-        txt += "<br>" + (i+1) + ". ";
+        txt += "<br><small>" + (i+1) + ". ";
         var file = x.files[i];
          filesList.push(file.name)
         if ('name' in file) {
-          txt += file.name + "<br>";   
+          txt += file.name + "<br></small>";   
         }
       }
     }
@@ -50,7 +50,7 @@ function myFunction(){
 
 </script>
 
-<p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>
+   <small><p>Tip:Use the Control or the Shift key to select multiple files.</p></small>
 
 </body>
 </html>
