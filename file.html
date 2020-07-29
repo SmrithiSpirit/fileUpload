@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onload="myFunction()" style="color:white">
+<body style="color:white">
    
  
 <input type="file" id="myFile" class="fileCss fileInput" multiple size="50" onchange="myFunction()">
@@ -31,7 +31,7 @@ function myFunction(){
     } else {
       txt += "The files property is not supported by your browser!";
       txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
-      //filesList  += x.value
+      filesList  += x.value
     }
   }
   document.getElementById("demo").innerHTML = txt;
