@@ -10,7 +10,7 @@
 <script>
 function myFunction(){
   var x = document.getElementById("myFile");
-  var txt = "";
+  var txt = "";var filesList;
   if ('files' in x) {
     if (x.files.length == 0) {
       txt = "";
@@ -20,9 +20,7 @@ function myFunction(){
         var file = x.files[i];
         if ('name' in file) {
           txt += "name: " + file.name + "<br>";
-        }
-        if ('size' in file) {
-          txt += "size: " + file.size + " bytes <br>";
+           filesList  += file.name
         }
       }
     }
@@ -33,10 +31,23 @@ function myFunction(){
     } else {
       txt += "The files property is not supported by your browser!";
       txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+      filesList  += x.value
     }
   }
   document.getElementById("demo").innerHTML = txt;
+  window.parent.postMessage(JSON.stringify({
+      event_code: 'ym-client-event', data: JSON.stringify({
+          event: {
+              code: "uploadfile",
+              data: {
+                  selectedDate: filesList
+              }
+          }
+      })
+  }), '*');
 }
+   
+
 </script>
 
 <p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>
