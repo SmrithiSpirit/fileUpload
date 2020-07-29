@@ -19,7 +19,7 @@ function myFunction(){
         txt += "<br><strong>" + (i+1) + ". file</strong><br>";
         var file = x.files[i];
         if ('name' in file) {
-          txt += "name: " + file.name + "<br>";
+          txt += file.name + "<br>";
            filesList  += file.name
         }
       }
