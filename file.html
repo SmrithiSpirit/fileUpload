@@ -18,7 +18,7 @@ function myFunction(){
       for (var i = 0; i < x.files.length; i++) {
         txt += "<br><small>" + (i+1) + ". ";
         var file = x.files[i];
-         filesList.push(file.name)
+         filesList += file.name+","
         if ('name' in file) {
           txt += file.name + "<br></small>";   
         }
